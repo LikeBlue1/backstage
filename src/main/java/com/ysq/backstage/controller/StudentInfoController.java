@@ -1,4 +1,4 @@
-package com.ysq.backstage.Controller;
+package com.ysq.backstage.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
