@@ -2,6 +2,8 @@ package com.ysq.backstage.controller;
 
 import com.ysq.backstage.model.CourseInfo;
 import com.ysq.backstage.model.PageResult;
+import com.ysq.backstage.services.ICourseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,6 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/courseinfo")
 public class CourseInfoController {
+    @Autowired
+    ICourseService iCourseService;
+
     @RequestMapping("/list")
     public String index(){
 
@@ -24,8 +29,8 @@ public class CourseInfoController {
 
     @RequestMapping("/listjson")
     @ResponseBody
-    public PageResult<CourseInfo> listJson(){
-        PageResult<CourseInfo> pageResult = new PageResult<CourseInfo>();
+    public PageResult<CourseInfo> listJson(int page,int limit){
+        PageResult<CourseInfo> pageResult = iCourseService.findPageResult(null,page,limit);
 
         return pageResult;
     }
