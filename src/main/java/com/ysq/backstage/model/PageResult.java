@@ -1,6 +1,8 @@
 package com.ysq.backstage.model;
 
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 /**
@@ -10,6 +12,7 @@ import java.util.List;
  * @Date 2020/9/8 21:03
  * @Version 1.0
  **/
+@Component
 public class PageResult<T> {
     private int code;//0=success
     private String msg;

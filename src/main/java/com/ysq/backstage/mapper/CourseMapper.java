@@ -12,4 +12,6 @@ public interface CourseMapper {
     public int findCountByMap(Map<String,Object> map);
 
     public List<CourseInfo> findListByMap(Map<String,Object> map);
+
+    public void insert(CourseInfo courseInfo);
 }

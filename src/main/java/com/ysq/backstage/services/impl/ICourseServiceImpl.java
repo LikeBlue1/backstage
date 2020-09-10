@@ -40,4 +40,9 @@ public class ICourseServiceImpl implements ICourseService {
 
         return pageResult;
     }
+
+    @Override
+    public void save(CourseInfo courseInfo) {
+        courseMapper.insert(courseInfo);
+    }
 }

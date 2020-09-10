@@ -1,5 +1,6 @@
 package com.ysq.backstage.controller;
 
+import com.ysq.backstage.model.CURDResult;
 import com.ysq.backstage.model.CourseInfo;
 import com.ysq.backstage.model.PageResult;
 import com.ysq.backstage.services.ICourseService;
@@ -21,6 +22,12 @@ public class CourseInfoController {
     @Autowired
     ICourseService iCourseService;
 
+    @Autowired
+    CourseInfo courseInfo;
+
+    @Autowired
+    CURDResult curdResult;
+
     @RequestMapping("/list")
     public String index(){
 
@@ -33,6 +40,11 @@ public class CourseInfoController {
         PageResult<CourseInfo> pageResult = iCourseService.findPageResult(null,page,limit);
 
         return pageResult;
+    }
+    @RequestMapping("/add")
+    public String add(){
+
+        return "courseinfo/add";
     }
 
 }

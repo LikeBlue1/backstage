@@ -1,5 +1,8 @@
 package com.ysq.backstage.model;
 
+import org.springframework.stereotype.Component;
+
+
 import java.util.Date;
 
 /**
@@ -9,6 +12,7 @@ import java.util.Date;
  * @Date 2020/9/8 21:13
  * @Version 1.0
  **/
+@Component
 public class CourseInfo {
     private String uuid;
     private String order_id;
